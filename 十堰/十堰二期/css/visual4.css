@@ -1,0 +1,359 @@
+/*雅虎css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { 
+    padding: 0; 
+    margin: 0; 
+} 
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img { 
+    border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+ol,ul { 
+    list-style: none; 
+} 
+caption,th { 
+    text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+    font-size: 100%; 
+} 
+q:before,q:after { 
+    content:""; 
+} 
+abbr,acronym { 
+    border: 0; 
+}
+
+整体样式
+
+@font-face
+{
+    font-family: fangzheng;
+    src: url(../font/fangzheng.ttf);
+}
+@font-face {
+	font-family:fangzheng;
+	src: url('../font/fangzheng.ttf');
+}
+html{
+	width: 100%;
+	height: 100%;
+	min-width: 1280px;
+	
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+#header{
+	width: 100%;
+	height: 10%;
+	background: url(../img/banner.png) no-repeat;
+	background-size: cover;
+}
+
+#main{
+	height: 90%;
+	background: url(../img/bk.png) no-repeat;
+	background-size: cover;
+}
+#mainLeft{
+	width: 26%;
+	height: 100%;
+	float: left;
+	
+}
+#mainMiddle{
+	width: 46%;
+	height: 100%;
+	margin-left: 1%;
+	margin-right: 1%;
+	float: left;
+}
+#mainRight{
+	width: 26%;
+	height: 100%;
+	float: right;	
+}
+
+.style1{
+
+}
+/*头部样式*/
+.logo{
+	display: block;
+	float: left;
+	width: 3rem;
+    height: 3rem;
+    margin-top: 0.7%;
+    margin-left: 1rem;
+    background: url(../img/logo.png) no-repeat;
+ 	background-size: 3rem 3rem;
+}
+#header span{
+	margin-top: 1%;
+	margin-left: 1rem;
+	display: block;
+	float: left;
+	width: 28rem;
+    height: 3rem;
+	font-family: fangzheng;
+	font-size: 2.2rem;
+	line-height: 3rem;
+	color: #FFFFFF;
+}
+.back,.user{
+	height:97%;
+	width: 5%;
+	float: right;
+	color: #FFFFFF;
+}
+.userfont,.backfont{
+	width: 100%;
+	text-align: center;
+	margin-top: 2%;
+}
+.back{
+	background-color: #199297;
+	border-right:1px solid #1dacb1 ;
+}
+.backimg{
+	width: 45%;
+	height: 50%;
+	margin-left: 28%;
+	margin-top: 12%;
+	background: url(../img/主页.png) no-repeat;
+	background-size: cover;
+}
+.userimg{
+	width: 45%;
+	height: 50%;
+	margin-left: 28%;
+	margin-top: 12%;
+	background: url(../img/用户.png) no-repeat;
+	background-size: cover;
+}
+.user{
+	background-color: #178A8E;
+}
+/*主体左上样式*/
+.kuang{
+	width: 90%;
+	margin-left: 8%;
+	margin-right: 2%;
+	background-color: #FFFFFF;
+	border-radius: 0.2rem;
+	box-shadow: 0 0 0.4rem #999999;
+	overflow:hidden;
+}
+.paifang{
+	margin-right: 8%;
+	margin-left: 2%;
+}
+#mainLeftkuang{
+	width: 100%;
+	position: relative;
+}
+.echTitleimg{
+	height: 0.2rem;
+	width: 4rem;
+	margin-left: 15%;
+	background: url(../img/标题背景.png);
+}
+.bg_dian{
+	height: 2rem;
+	width: 90%;
+	background: url(../img/bg_dian.png) no-repeat;
+	background-size: 100% 2rem;
+	position: absolute;
+	bottom: 0px;
+}
+
+.kuangtitle{
+	background: url(../img/titlebg.png) no-repeat;
+	background-size: cover;
+	width: 85%;
+	margin-left: 5%;
+	padding-left: 5%;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin-top: 1rem;
+	color: #2fbcc1;
+}
+.Titlef1{
+	margin-left: 1.5rem;
+}
+/*污染源一企一档样式*/
+.wuran{
+	height: 47%;
+	position: relative;
+}
+.qiye{
+	height: 47%;
+	position: absolute;
+	bottom: 0px;
+}
+.paifang,#mainLeftkuang{
+	margin-top: 3rem;
+	height: 87%;
+	position: relative;
+}
+
+.titlefont{
+	font-size: 1.3rem;
+	color: #666666;
+	font-weight: bold;
+	height: 2rem
+	line-height: 2rem;
+	padding-left: 8%;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.mainfontL{
+	color: #666666;
+	font-size: 1.2rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding-left: 8%;
+	width: 43%;
+	float: left;
+
+}
+.mainfontR{
+	color: #666666;
+	font-size: 1.2rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding-left: 2%;
+	width: 43%;
+	float: left;
+}
+.wuranf1{
+	color: #47A0E5;
+	margin-left: 6rem;
+	font-size: 1.8rem;
+}
+.wuranf2{
+	color: #47A0E5;
+}
+.wuranf3{
+	color: #FAA152;
+	margin-left: 2rem;
+	font-size: 1.3rem;
+	font-weight:bold;
+}
+.wuranf4{
+	color: #FAA152;
+	margin-left: 0.2rem;
+}
+/*重点监管企业样式*/
+#qiyechart{
+	width: 100%;
+	height: 75%;
+}
+/*实施排放样式*/
+.paifangtitle{
+	font-size: 1.25rem;
+	margin-left: 5%;
+	height: 3rem;
+	line-height: 3rem;
+	color: #666666;
+	font-weight: bold;
+	position: relative;
+	clear: both;
+}
+.jinri{
+	padding-left: 8%;
+	width: 43%;
+	float: left;
+	font-size: 1rem;
+	color: #666666;
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+.dangyue{
+	padding-left: 2%;
+	width: 43%;
+	float: left;
+	font-size: 1rem;
+	color: #666666;
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+.paifangnub{
+	padding-left: 8%;
+	width: 43%;
+	float: left;
+	font-weight: bold;
+	color: #FAA152;
+	font-size: 1.6rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+.paifangnub span{
+	font-size: 1rem;
+}
+.paifangnub2{
+	padding-left: 2%;
+	width: 43%;
+	float: left;
+	font-weight: bold;
+	color: #47A0E5;
+	font-size: 1.6rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+.paifangnub2 span{
+	font-size: 1rem;
+}
+.paifangchakuang{
+	padding-left: 5%;
+	width: 43%;
+	float: left;
+	font-weight: bold;
+	color: #666;
+	font-size: 1rem;
+	height: 20%;
+}
+.paifangchart{
+	width: 100%;
+	height: 85%;
+}
+.paifangchartnub{
+	height: 1rem;
+	width: 100%;
+	line-height: 1rem;
+	text-align: center;
+}
+/*中间地图样式*/
+#maintitle{
+	font-size: 2rem;
+	height: 4rem;
+	line-height: 3rem;
+	width: 40%;
+	margin-left: 30%;
+	font-weight: bold;
+	color: #1eACB1;
+	text-align: center;
+	margin-top: 1rem;
+}
+.maintitleimg{
+	height: 0.6rem;
+	width: 20rem;
+	background: url(../img/bt_line.png) no-repeat;
+	background-size: 20rem 0.5rem;
+}
+#mapchart{
+	width: 100%;
+	height: 80%;
+}

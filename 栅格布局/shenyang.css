@@ -1,0 +1,383 @@
+/*雅虎css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { 
+    padding: 0; 
+    margin: 0; 
+} 
+body,a
+{
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+}
+a:hover{
+	text-decoration: none;
+}
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img { 
+    border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+ol,ul { 
+    list-style: none; 
+} 
+caption,th { 
+    text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+    font-size: 100%; 
+} 
+q:before,q:after { 
+    content:""; 
+} 
+abbr,acronym { 
+    border: 0; 
+}
+/*header部分*/
+body{
+	background-color: #164966;
+	color: #FFFFFF;
+}
+#header{
+	width: 100%;
+	text-align: center;
+	background-color: #124B6F;
+	font-weight: bold;
+	/*字体渐变色*/
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(120, 254, 247, 1)), to(rgba(32, 146, 215, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*文字不可选中*/
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+.row{
+	margin: 0px!important;
+	padding: 0px!important;
+}
+#nav a{
+	text-align: center;
+	color: rgba(120, 254, 247, 1);
+	font-weight: bold;
+	float: right;
+}
+#nav a:hover{
+	text-decoration: none;
+}
+/*媒体查询*/
+@media only screen and (max-width: 800px){
+	.nav_a_800{
+		padding: 0px;
+		margin: 0px;
+	}
+	#header{
+		padding: 0px;
+		text-align: center;
+	}
+	#article_right{
+		margin-top: 0.5rem;
+	}
+}
+@media only screen and (max-width: 990px){
+	#article_right{
+		margin-top: 0.5rem;
+	}
+}
+@media only screen and (max-width: 767px){
+	#article_mid{
+		margin-top: 0.5rem;
+	}
+}
+@media (min-width: 1920px) {
+  body{
+	font-size: 25px;	
+  }
+  .container {
+    width: 1800px;
+  }
+  #pie_chart{
+  	width: 300px;
+  	height: 300px;
+  }
+  .datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{
+  	font-size: 26px;
+  	line-height: 30px;
+  }
+}
+/*boot响应式导航*/
+.navbar-default .navbar-brand{
+	color: rgba(120, 254, 247, 1);
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+	color: rgba(120, 254, 247, 1);
+}
+/*导航栏背景色与边框*/
+.navbar-default{
+	background-color: #124B6F;
+	border: none;
+}
+/*导航栏栏目效果*/
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #FFFFFF;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a{
+	color: rgba(120, 254, 247, 1);
+}
+/*导航栏栏目选中情况下效果*/
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FFFFFF;
+  background-color: #164966;
+}
+/*下拉菜单效果*/
+/*下拉菜单整体*/  .dropdown-menu{
+	border: none;
+	background-color: #164966;
+	
+}
+/*下拉菜单栏目*/   .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+	background-color: #164966;
+}
+/*面包块下拉菜单效果*/
+.navbar-collapse{
+	border: none;
+}
+.dropdown-menu > li > a{
+	color: rgba(120, 254, 247, 1);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+	color: rgba(120, 254, 247, 1);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, 
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+	color: #FFFFFF;
+}
+/*下拉菜单按钮*/
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+	background-color: transparent;
+}
+.navbar-default .navbar-toggle{
+	border: none;
+}
+/*主内容部分*/
+#article{
+	width: 100%;
+	color: #FFFFFF;
+	/*height: 520px;*/
+}
+#article a{
+	color: #FFFFFF;
+}
+#article_left,#article_mid,#article_right{
+	padding: 0.1rem;
+}
+#article #article_left_table,#article_left_charts,
+.mainborder{
+	border: 1px solid #71f2ed;
+	border-radius: 5px;
+}
+.mainborder{
+	height: 100%;
+}
+#article_left{
+	height: 12.5rem;
+	min-height: 500px;
+}
+#article_left_table{
+	height: 56.5%;
+	margin-bottom: 2.5%;
+}
+#article_left_charts{
+	height: 41.5%;
+}
+#article_mid{
+	height: 12.5rem;
+	overflow: hidden;
+	min-height: 500px;
+}
+#article_right{
+	height: 12.5rem;
+	min-height: 500px;
+}
+
+/*主内容左上部*/
+#article_left_table_hd>a,.righttitle{
+	float: right;
+	color: rgba(120, 254, 247, 1)!important;
+	margin-right: 5px;
+}
+.table_left_1{
+	border: none;
+	margin-top: 0.2rem;
+	margin-bottom: 0px;
+}
+#article_left_table_ft{
+	text-align: center;
+}
+#article_left_table_ft span{
+	display: inline-block;
+	width: 23.5%;
+}
+.pdtitle{
+	font-size: 0.3rem;
+}
+.pdnumber{
+	color: #5BC0DE;
+	font-weight: bold;
+}
+/*主内容左下部*/
+#article_left_charts{
+	position: relative;
+}
+#pie_chart{
+		width: 3rem;
+		height: 3rem;
+		float: left;
+		margin: 10px;
+}
+#chartmain{
+	margin-top: 15px;
+	position: relative;
+}
+#chartmain{
+	width: 50%;
+	height: 70%;
+	float: left;
+}
+#chartmainrt{
+	width: 40%;
+	float: right;
+	padding-top: 20px;
+}
+.plnumber{
+	font-size: 1rem;
+	color: #5BC0DE;
+	font-weight: bold;
+}
+/*主内容中部*/
+#article_mid ul a{
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+}
+#article_mid li{
+	text-align: center;
+}
+#article_mid>.mainborder{
+	overflow-y: scroll;
+}
+/*滑块颜色*/
+	::-webkit-scrollbar {
+		  width: 5px;
+	} /* 这是针对缺省样式 (必须的) */
+	::-webkit-scrollbar-track {
+		  background-color: #b46868;
+	} /* 滚动条的滑轨背景颜色 */
+
+	::-webkit-scrollbar-thumb {
+		  background-color: rgba(0, 0, 0, 0.2); 
+	} /* 滑块颜色 */
+
+	::-webkit-scrollbar-button {
+		  background-color: #7c2929;
+	} /* 滑轨两头的监听按钮颜色 */
+
+	::-webkit-scrollbar-corner {
+		  background-color: black;
+	} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+#chartmain:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+/*表格css*/
+#article_right_table>div{
+	width: 100%;
+	height: 10rem;
+	min-height: 430px;
+}
+.datagrid-htable,.datagrid-header,.datagrid-btable,.datagrid-pager,.pagination,.pagination-page-list
+,.pagination-num,.datagrid-header-row,.panel-header, .panel-body,.datagrid-row-over
+,.datagrid-row ,.datagrid-row-checked ,.datagrid-row-selected,.datagrid-header td.datagrid-header-over
+,.l-btn-plain:hover{
+	font-family: "宋体","Times New Roman",Georgia,Serif;
+	color: #FFFFFF;
+	background-color: #164966;
+	border-color: #50F6FF;
+}
+.datagrid-header-over{
+	
+}
+.datagrid-view td{
+	border-style: solid;
+	border-color: #50F6FF;
+}
+.datagrid-htable{
+	height: 1.2rem;
+}
+.datagrid-row{
+	height: 0.8rem;
+	font-size: 0.2rem;
+}
+.datagrid-header-inner{
+	text-align: center !important;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.datagrid-header{
+	background-color: #164966;
+}
+.datagrid-cell{
+	text-align: center;
+}
+.pagination table{
+	height: 40px;
+	float: right;
+}
+.datagrid-pager a,.datagrid-pager select{
+	height: 50px;
+	line-height: 50px;
+}
+.datagrid-body{
+	overflow: hidden;
+}
+.datagrid-pager a{
+	width: 50px;
+	background-size:45px 45px;
+}
+
+.pagination td:first-child,.pagination-btn-separator,.pagination td:nth-last-of-type(6),.pagination td:nth-last-of-type(5),.pagination td:nth-last-of-type(4),.pagination td:nth-last-of-type(3),.pagination td:nth-last-of-type(2),.pagination td:nth-last-of-type(1){
+	display: none;
+}
+.datagrid-header .datagrid-cell span{
+	font-size: 0.3rem;
+}
+.datagrid-row-selected{
+	background-color: #164966;
+}
+.panel-body-noheader{
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+}
+.pagination-info{
+	display: none;
+}
+.datagrid .datagrid-pager{
+	border: none;
+}
+.datagrid-row td:last-child,.datagrid-header-row td:last-child{
+	border-right: none;
+}
+.pagination-page-list, .pagination .pagination-num {
+    border: none;
+}

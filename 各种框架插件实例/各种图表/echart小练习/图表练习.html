@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="echarts.js"></script>
+		<script src="jquery-3.1.1.min.js"></script>
+		<style type="text/css">
+			
+			#bar_chart{
+				width: 500px;
+				height: 400px;
+				float: left;
+				border: 1px solid #000000;
+				margin: 10px;
+			}
+			#pie_chart{
+				width: 500px;
+				height: 400px;
+				float: left;
+				border: 1px solid #000000;
+				margin: 10px;
+			}
+			#area_chart{
+				width: 800px;
+				height: 400px;
+				float: left;
+				border: 1px solid #000000;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="">
+			
+    <div id="bar_chart"></div>
+    <div id="pie_chart"></div>
+    <div id="area_chart"></div>
+    </div>
+    <script type="text/javascript">
+//柱状图实例
+        // 基于准备好的dom，初始化echarts实例
+      //var myChart = echarts.init(document.getElementById('bar_chart'));
+		var myChart = echarts.init(($("#bar_chart"))[0]);
+        // 指定图表的配置项和数据
+        var optionbar = {
+            title: {
+                text: '各因子排放量分析'
+            },
+            tooltip: {},
+            legend: {
+                data:['CO','HD','CO2','NO'],
+                right:'20'
+            },
+            xAxis: {
+                data: ["九月一号","九月二号","九月三号","九月四号","九月五号","九月六号"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'CO',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20],
+                itemStyle:{
+                normal:{color:'#FFD876'}
+              }
+            },
+            {
+                name: 'HD',
+                type: 'bar',
+                data: [15, 20, 22, 10, 18, 20],
+                itemStyle:{
+                normal:{color:'#958EF0'}
+              }
+            },
+            {
+                name: 'CO2',
+                type: 'bar',
+                data: [25, 38, 34, 42, 28, 32],
+                itemStyle:{
+                normal:{color:'#34D7C6'}
+              }
+            },
+            {
+                name: 'NO',
+                type: 'bar',
+                data: [6, 12, 14, 8, 11, 7],
+                itemStyle:{
+                normal:{color:'#4BE0E5'}
+              }
+            }
+//          ,
+//          color:{
+//          	['#FFD876','#958EF0','#34D7C6','#4BE0E5','#112211']
+//          }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(optionbar);
+//饼状图实例
+		var piechart = echarts.init(($('#pie_chart'))[0]);
+		var optionpie = {
+			title: {
+                text: '烟油类型统计'
+            },
+		    series : [
+		        {
+		            type: 'pie',
+		            radius: '55%',
+		            //以下可转换为南汀格尔图
+//		            roseType: 'angle',
+		            data:[
+		                {value:235, name:'A',
+		                itemStyle:{
+		                normal:{color:'#FFD876'}
+		              }},
+		                {value:310, name:'B',
+		                itemStyle:{
+		                normal:{color:'#958EF0'}
+		              }},
+		                {value:310, name:'C',
+		                itemStyle:{
+		                normal:{color:'#34D7C6'}
+		              }},
+		                {value:335, name:'D',
+		                itemStyle:{
+		                normal:{color:'#4BE0E5'}
+		              }},
+		                {value:400, name:'E',
+		                itemStyle:{
+		                normal:{color:'#112211'}
+		              }}
+		            ]
+		        }
+		    ]
+		};
+		piechart.setOption(optionpie);
+//面积图
+		var areachart = echarts.init(($('#area_chart'))[0]);
+		var areaoption = {
+		    title : {
+		        text: '超标因子',
+		        subtext: '数量单位（个）'
+		    },
+		    tooltip : {
+		        trigger: 'axis'
+		    },
+		    legend: {
+		        data:['CO','HD','NO2']
+		    },
+		    toolbox: {
+		        show : true,
+		        feature : {
+		            mark : {show: true},
+		            dataView : {show: true, readOnly: false},
+		            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+		            restore : {show: true},
+		            saveAsImage : {show: true}
+		        }
+		    },
+		    calculable : true,
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            data : ['周一','周二','周三','周四','周五','周六','周日']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value'
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'CO',
+		            type:'line',
+		            smooth:true,
+		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+		            data:[10, 12, 21, 54, 260, 830, 710]
+		        },
+		        {
+		            name:'HD',
+		            type:'line',
+		            smooth:true,
+		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+		            data:[30, 182, 434, 791, 390, 30, 10]
+		        },
+		        {
+		            name:'NO2',
+		            type:'line',
+		            smooth:true,
+		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+		            data:[1320, 1132, 601, 234, 120, 90, 20]
+		        }
+		    ]
+		};
+		areachart.setOption(areaoption);
+    </script>
+	</body>
+</html>

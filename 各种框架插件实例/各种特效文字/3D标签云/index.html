@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于HTML5 SVG可互动的3D标签云jQuery插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+		#tag-cloud{
+			width:640px;
+			height:480px;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>基于HTML5 SVG可互动的3D标签云jQuery插件 <span>A 3D Interactive SVG Tag Cloud Plugin With jQuery</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/html5/SVG/201602253145.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div id='tag-cloud'></div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/html5/SVG/201602033104.html">
+			  <img src="related/1.jpg" width="300" alt="基于svg和Segment.js的Loading加载按钮特效"/>
+			  <h3>基于svg和Segment.js的Loading加载按钮特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/html5/SVG/201512162908.html">
+			  <img src="related/2.jpg" width="300" alt="基于svg的轻量级js圆形进度条插件"/>
+			  <h3>基于svg的轻量级js圆形进度条插件</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.svg3dtagcloud.min.js"></script>
+	<script>
+    	$( document ).ready( function() {
+            var entries = [ 
+                { label: 'Back to top', url: '#', target: '_top' },
+                { label: 'Bootstrap', url: '#', target: '_top' },
+                { label: 'Carousel', url: '#', target: '_top' },
+                { label: 'Countdown', url: '#', target: '_top' },
+                { label: 'Dropdown Menu', url: '#', target: '_top' },
+                { label: 'CodePen', url: 'http://codepen.io/', target: '_top' },
+                { label: 'three.js', url: 'http://threejs.org/', target: '_top' },
+                { label: 'Form Validation', url: '#', target: '_top' },
+                { label: 'JS Compress', url: 'http://jscompress.com/', target: '_top' },
+                { label: 'TinyPNG', url: 'https://tinypng.com/', target: '_top' },
+                { label: 'Can I Use', url: 'http://caniuse.com/', target: '_top' },
+                { label: 'URL shortener', url: 'https://goo.gl/', target: '_top' },
+                { label: 'Grid Layout', url: '#', target: '_top' },
+                { label: 'Twitter', url: 'https://twitter.com/', target: '_top' },
+                { label: 'deviantART', url: 'http://nkunited.deviantart.com/', target: '_top' },
+                { label: 'Gulp', url: 'http://gulpjs.com/', target: '_top' },
+                { label: 'Browsersync', url: 'https://www.browsersync.io/', target: '_top' },
+                { label: 'GitHub', url: 'https://github.com/', target: '_top' },
+                { label: 'Shadertoy', url: 'https://www.shadertoy.com/', target: '_top' },
+                { label: 'Tree View', url: '#', target: '_top' },
+                { label: 'jsPerf', url: 'http://jsperf.com/', target: '_top' },
+                { label: 'Foundation', url: 'http://foundation.zurb.com/', target: '_top' },
+                { label: 'CreateJS', url: 'http://createjs.com/', target: '_top' },
+                { label: 'Velocity.js', url: 'http://julian.com/research/velocity/', target: '_top' },
+                { label: 'TweenLite', url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/', target: '_top' },
+                { label: 'jQuery', url: 'https://jquery.com/', target: '_top' },
+                { label: 'Notification', url: '#', target: '_top' },
+                { label: 'Parallax', url: '#', target: '_top' }
+            ];
+
+            var settings = {
+
+                entries: entries,
+                width: 640,
+                height: 480,
+                radius: '65%',
+                radiusMin: 75,
+                bgDraw: true,
+                bgColor: '#494A5F',
+                opacityOver: 1.00,
+                opacityOut: 0.05,
+                opacitySpeed: 6,
+                fov: 800,
+                speed: 0.5,
+                fontFamily: 'Oswald, Arial, sans-serif',
+                fontSize: '15',
+                fontColor: '#fff',
+                fontWeight: 'normal',//bold
+                fontStyle: 'normal',//italic 
+                fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                fontToUpperCase: true
+
+            };
+
+            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+            $( '#tag-cloud' ).svg3DTagCloud( settings );
+
+		} );
+        
+    </script>
+</body>
+</html>

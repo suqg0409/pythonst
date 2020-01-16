@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body, html {
+		  padding: 0;
+		}
+		
+		body {
+		  background: rgba(54, 226, 35, 0.2);
+		  // background: #333;
+		}
+
+		#ku1{
+			position: relative;
+			background: #333;
+			width: 100px; 
+			height: 50px; 
+			border-radius: 15px;
+			box-shadow: 2px 2px 2px #333333;
+			background: #333;
+			margin: 50px;
+		}
+		#ku1:hover{
+			box-shadow: 3px 3px 10px #333333;
+		}
+		.mojs-shape{
+			pointer-events: none;
+		}
+    </style>
+</head>
+<body>
+		<div id="ku1">
+		
+		</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src='js/mo.js'></script>
+<!--<script src='js/mojs-player.min.js'></script>-->
+<script>
+const shape = new mojs.Shape({
+  left: 0, top: 0,
+  radius:           5,
+  stroke:           'white',
+  fill:             'none',
+  strokeWidth:      { 10 : 0, easing:           'cubic.out' },
+  strokeLinecap:    'round',
+  scale:            { 0: 3 },
+  duration:         600,
+  easing:           'quad.out' 
+});
+
+document.getElementById("ku1").addEventListener('click', function (e) {
+  shape
+    .tune({ x: e.pageX, y: e.pageY })
+    .replay();
+});
+</script>
+</body>
+</html>

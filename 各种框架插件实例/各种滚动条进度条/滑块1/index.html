@@ -1,0 +1,427 @@
+﻿<!doctype html>
+
+<html>
+
+<head>
+
+   <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function (e) {
+
+            //设置最大值
+
+            ScrollBar.maxValue = 100;
+
+            //初始化
+
+            ScrollBar.Initialize();
+
+            //设置最大值
+
+            ProgressBar.maxValue = 100;
+
+            //设置当前刻度
+
+            var index = 0;
+
+            var mProgressTimer = setInterval(function () {
+
+                index += 2;
+
+                ProgressBar.SetValue(index);
+
+            }, 100);
+
+
+
+        });
+
+        var ScrollBar = {
+
+            value: 20,
+
+            maxValue: 100,
+
+            step: 1,
+
+            currentX: 0,
+
+            Initialize: function () {
+
+                if (this.value > this.maxValue) {
+
+                    alert("给定当前值大于了最大值");
+
+                    return;
+
+                }
+
+                this.GetValue();
+
+                $("#scroll_Track").css("width", this.currentX + 2 + "px");
+
+                $("#scroll_Thumb").css("margin-left", this.currentX + "px");
+
+                this.Value();
+
+                $("#scrollBarTxt").html(ScrollBar.value + "/" + ScrollBar.maxValue);
+
+            },
+
+            Value: function () {
+
+                var valite = false;
+
+                var currentValue;
+
+                $("#scroll_Thumb").mousedown(function () {
+
+                    valite = true;
+
+                    $(document.body).mousemove(function (event) {
+
+                        if (valite == false) return;
+
+                        var changeX = event.clientX - ScrollBar.currentX;
+
+                        currentValue = changeX - ScrollBar.currentX - $("#Demo").offset().left;
+
+                        $("#scroll_Thumb").css("margin-left", currentValue + "px");
+
+                        $("#scroll_Track").css("width", currentValue + 2 + "px");
+
+                        if ((currentValue + 25) >= $("#scrollBar").width()) {
+
+                            $("#scroll_Thumb").css("margin-left", $("#scrollBar").width() - 25 + "px");
+
+                            $("#scroll_Track").css("width", $("#scrollBar").width() + 2 + "px");
+
+                            ScrollBar.value = ScrollBar.maxValue;
+
+                        } else if (currentValue <= 0) {
+
+                            $("#scroll_Thumb").css("margin-left", "0px");
+
+                            $("#scroll_Track").css("width", "0px");
+
+                        } else {
+
+                            ScrollBar.value = Math.round(100 * (currentValue / $("#scrollBar").width()));
+
+                        }
+
+                        $("#scrollBarTxt").html(ScrollBar.value + "/" + ScrollBar.maxValue);
+
+                    });
+
+                });
+
+                $(document.body).mouseup(function () {
+
+                    ScrollBar.value = Math.round(100 * (currentValue / $("#scrollBar").width()));
+
+                    valite = false;
+
+                    if (ScrollBar.value >= ScrollBar.maxValue) ScrollBar.value = ScrollBar.maxValue;
+
+                    if (ScrollBar.value <= 0) ScrollBar.value = 0;
+
+                    $("#scrollBarTxt").html(ScrollBar.value + "/" + ScrollBar.maxValue);
+
+                });
+
+            },
+
+            GetValue: function () {
+
+                this.currentX = $("#scrollBar").width() * (this.value / this.maxValue);
+
+            }
+
+        }
+
+        var ProgressBar = {
+
+            maxValue: 100,
+
+            value: 20,
+
+            SetValue: function (aValue) {
+
+                this.value = aValue;
+
+                if (this.value >= this.maxValue) this.value = this.maxValue;
+
+                if (this.value <= 0) this.value = 0;
+
+                var mWidth = this.value / this.maxValue * $("#progressBar").width() + "px";
+
+                $("#progressBar_Track").css("width", mWidth);
+
+                $("#progressBarTxt").html(this.value + "/" + this.maxValue);
+
+            }
+
+        }
+
+	</script>
+
+<style type="text/css">
+
+#Main {
+
+	width: 70%;
+
+	height: 300px;
+
+	margin: 0 auto;
+
+	margin-top: 10px;
+
+}
+
+#scrollBar {
+
+	width: 80%;
+
+	height: 10px;
+
+	background-color: #ccc;
+
+	margin: 0 auto;
+
+	margin-top: 50px;
+
+	-webkit-border-radius: 2em;
+
+	-moz-border-radius: 2em;
+
+	border-radius: 2em;
+
+	cursor: pointer;
+
+}
+
+#scroll_Track {
+
+	width: 0px;
+
+	height: 10px;
+
+	background-color: #ff4400;
+
+	-webkit-border-radius: 2em;
+
+	-moz-border-radius: 2em;
+
+	border-radius: 2em;
+
+}
+
+#scroll_Thumb {
+
+	height: 25px;
+
+	width: 25px;
+
+	background-color: #efefef;
+
+	-webkit-border-radius: 2em;
+
+	-moz-border-radius: 2em;
+
+	border-radius: 2em;
+
+	border: 1px solid #ccc;
+
+	-webkit-box-shadow: 0px 0px 5px #ccc;
+
+	-moz-box-shadow: 0px 0px 5px #ccc;
+
+	box-shadow: 0px 0px 5px #ccc;
+
+	position: absolute;
+
+	margin-top: -18px;
+
+	cursor: pointer;
+
+}
+
+#scroll_Thumb:hover {
+
+	background-color: #ff4400;
+
+	border: 1px solid #fff;
+
+}
+
+#progressBar {
+
+	width: 80%;
+
+	height: 10px;
+
+	background-color: #ccc;
+
+	margin: 0 auto;
+
+	margin-top: 50px;
+
+	-webkit-border-radius: 2em;
+
+	-moz-border-radius: 2em;
+
+	border-radius: 2em;
+
+}
+
+#progressBar_Track {
+
+	width: 200px;
+
+	height: 10px;
+
+	background-color: #ff4400;
+
+	-webkit-border-radius: 2em;
+
+	-moz-border-radius: 2em;
+
+	border-radius: 2em;
+
+}
+
+#beian {
+
+	text-align: center;
+
+	float: left;
+
+	width: 100%;
+
+	margin-top: 50px
+
+}
+
+#beian a {
+
+	color: gray;
+
+	font: 13px "微软雅黑", Arial, Helvetica, sans-serif;
+
+}
+
+
+
+ .progressTime {
+
+            filter: alpha(opacity=50);
+
+            -moz-opacity: 0.5;
+
+            -khtml-opacity: 0.5;
+
+            opacity: 0.5;
+
+            position: absolute;
+
+            _position: fixed;
+
+            left: 25%;
+
+            top:25%;
+
+            Z-INDEX: 2;
+
+            border: 1px solid gray;
+
+            -moz-border-radius: 5px;
+
+            -webkit-border-radius: 5px;
+
+            border-radius: 5px;
+
+            color: white;
+
+            background: #000;
+
+            width: 660px;
+
+            height:200px;
+
+            padding-top: 0px;
+
+            padding-bottom: 0px;
+
+        }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+    
+
+
+
+      <div id="Demo" class="progressTime" >
+
+        <div id="Main">
+
+          <div id="scrollBar">
+
+            <div id="scroll_Track"></div>
+
+            <div id="scroll_Thumb"></div>
+
+          </div>
+
+          <p id="scrollBarTxt" style="text-align:center;"></p>
+
+          <div id="progressBar">
+
+            <div id="progressBar_Track"></div>
+
+          </div>
+
+          <p id="progressBarTxt" style="text-align:center;"></p>
+
+        </div>
+
+      
+
+      </div>
+
+
+
+</body>
+
+
+
+
+
+
+
+<!--[if IE 7]>
+
+   <style type="text/css">
+
+			.menuItem{ margin-left:-130px; } 
+
+		</style>
+
+    <![endif]-->
+
+
+
+</html>

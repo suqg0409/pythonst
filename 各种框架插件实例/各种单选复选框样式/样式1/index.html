@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>演示：使用纯CSS美化radio和checkbox</title>
+<meta name="keywords" content="css" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<link rel="stylesheet" type="text/css" href="magic-check.css">
+<style type="text/css">
+
+.demo{width:360px;margin:50px auto 10px auto;padding:10px;}
+.demo img{width:90%}
+.demo h3{font-size:1.5em;line-height:1.9em}
+
+.col{margin-top:20px}
+.col h4{height:40px;line-height:40px}
+.opt{height:30px;line-height:24px}
+</style>
+
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.helloweba.com" title="返回helloweba首页">helloweba</a></h1></div>
+</div>
+
+<div id="main">
+   <h2 class="top_title"><a href="http://www.helloweba.com/view-blog-361.html">使用纯CSS美化radio和checkbox</a></h2>
+  
+	<div class="demo">
+		<div class="col">
+          <h4>Checkbox</h4>
+			
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c1">
+				<label for="c1">Normal</label>
+			</div>
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c2" checked>
+				<label for="c2">Checked</label>
+			</div>
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c3" value="option2" disabled>
+				<label for="c3" style="color:#ccc">Disabled</label>
+			</div>
+			<div class="opt">
+				<input class="magic-checkbox" type="checkbox" name="layout" id="c4" checked disabled>
+				<label for="c4" style="color:#ccc">Checked && Disabled</label>
+			</div>
+
+
+
+        </div>
+
+        <div class="col">
+			<h4>Radio</h4>
+			<div class="opt">
+				<input class="magic-radio" type="radio" name="radio" id="r1" value="option1">
+				<label for="r1">Normal</label>
+			</div>
+			<div class="opt">
+				<input class="magic-radio" type="radio" name="radio" id="r2" value="option2" checked>
+				<label for="r2">Checked</label>
+			</div>
+			<div class="opt">
+				<input class="magic-radio" type="radio" name="radio" id="r3" value="option3" disabled>
+				<label for="r3" style="color:#ccc">禁用</label>
+			</div>
+			<div class="opt">
+				<input class="magic-radio" type="radio" id="r4" value="option4" checked disabled>
+				<label for="r4" style="color:#ccc">Checked && Disabled</label>
+			</div>
+        </div>
+	</div>
+	
+</div>
+
+<div id="footer">
+    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com">www.helloweba.com</a></p>
+</div>
+
+</body>
+</html>

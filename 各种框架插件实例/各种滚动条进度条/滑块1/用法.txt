@@ -1,0 +1,15 @@
+滑动：  //设置最大值
+            ScrollBar.maxValue = 100;
+            //初始化
+            ScrollBar.Initialize();
+
+ 
+
+进度条 ：//设置最大值
+            ProgressBar.maxValue = 100;
+            //设置当前刻度
+            var index = 0;
+            var mProgressTimer = setInterval(function () {
+                index += 2;
+                ProgressBar.SetValue(index);
+            }, 100);

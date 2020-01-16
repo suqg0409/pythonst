@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>简单的jQuery无缝向上滚动效果演示</title>
+<style>
+* { margin: 0; padding: 0;}
+.myscroll { width: 300px; height: 260px; margin: 0 auto; border: 1px solid #ccc; line-height: 26px; font-size: 12px; overflow: hidden;}
+.myscroll li { height: 26px; margin-left: 25px;}
+.myscroll a { color: #333; text-decoration: none;}
+.myscroll a:hover { color: #ED5565; text-decoration: underline;}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/scroll.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.myscroll').myScroll({
+		speed: 40, //数值越大，速度越慢
+		rowHeight: 26 //li的高度
+	});
+});
+</script>
+</head>
+
+<body>
+<h1 style="margin: 40px; font: 32px Microsoft Yahei; text-align: center;">简单的jQuery无缝向上滚动效果演示1</h1>
+
+<div class="menu">
+	<a class="cur" href="index.html">演示1（文字滚动）</a>
+	<a href="index2.html">演示2（图片滚动）</a>
+</div>
+
+<div class="myscroll">
+	<ul>
+		<li><a href="#68.html">用FlexSlider制作支付宝2013版幻灯片</a></li>
+		<li><a href="#67.html">扁平化UI/Flat UI Kit(PSD)</a></li>
+		<li><a href="#66.html">童趣卡通圣诞老人矢量素材(EPS)</a></li>
+		<li><a href="#65.html">63个线性图标素材(PSD)</a></li>
+		<li><a href="#64.html">15个音乐类图标素材(AI)</a></li>
+		<li><a href="#63.html">jQuery侧边导航插件SidebarJS</a></li>
+		<li><a href="#62.html">jQuery计时器插件TimeCircles</a></li>
+		<li><a href="#61.html">jQuery仿Google Play幻灯片效果插件plusview</a></li>
+		<li><a href="#60.html">100个圣诞节矢量图标(PSD/SVG)</a></li>
+		<li><a href="#59.html">用FlexSlider制作《枪神纪》幻灯片效果</a></li>
+		<li><a href="#68.html">用FlexSlider制作支付宝2013版幻灯片</a></li>
+		<li><a href="#67.html">扁平化UI/Flat UI Kit(PSD)</a></li>
+		<li><a href="#66.html">童趣卡通圣诞老人矢量素材(EPS)</a></li>
+		<li><a href="#65.html">63个线性图标素材(PSD)</a></li>
+		<li><a href="#64.html">15个音乐类图标素材(AI)</a></li>
+		<li><a href="#63.html">jQuery侧边导航插件SidebarJS</a></li>
+		<li><a href="#62.html">jQuery计时器插件TimeCircles</a></li>
+		<li><a href="#61.html">jQuery仿Google Play幻灯片效果插件plusview</a></li>
+		<li><a href="#60.html">100个圣诞节矢量图标(PSD/SVG)</a></li>
+		<li><a href="#59.html">用FlexSlider制作《枪神纪》幻灯片效果</a></li>
+	</ul>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+/*雅虎css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { 
+    padding: 0; 
+    margin: 0; 
+} 
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img { 
+    border: 0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+    font-weight: normal; 
+    font-style: normal; 
+} 
+ol,ul { 
+    list-style: none; 
+} 
+caption,th { 
+    text-align: left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+    font-size: 100%; 
+} 
+q:before,q:after { 
+    content:""; 
+} 
+abbr,acronym { 
+    border: 0; 
+}
+
+整体样式
+
+@font-face
+{
+    font-family: fangzheng;
+    src: url(../font/fangzheng.ttf);
+}
+@font-face {
+	font-family:fangzheng;
+	src: url('../font/fangzheng.ttf');
+}
+html{
+	width: 100%;
+	height: 100%;
+	min-width: 1280px;
+	
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+#header{
+	width: 100%;
+	height: 10%;
+	background: url(../img/banner.png) no-repeat;
+	background-size: cover;
+}
+
+#main{
+	height: 90%;
+	background: url(../img/bk.png) no-repeat;
+	background-size: cover;
+}
+#mainLeft{
+	width: 19%;
+	height: 100%;
+	float: left;
+	background-color: #FFFFFF;
+	
+}
+#mainMiddle{
+	width: 60%;
+	height: 100%;
+	margin-left: 1%;
+	margin-right: 1%;
+	float: left;
+	background-color: #FFFFFF;
+
+}
+#mainRight{
+	width: 19%;
+	height: 100%;
+	float: right;
+	background-color: #FFFFFF;
+	
+}
+
+.style1{
+
+}
+/*头部样式*/
+.logo{
+	display: block;
+	float: left;
+	width: 3rem;
+    height: 3rem;
+    margin-top: 1.4%;
+    margin-left: 1rem;
+    background: url(../img/logo.png) no-repeat;
+ 	background-size: 3rem 3rem;
+}
+#header span{
+	margin-top: 1.6%;
+	margin-left: 1rem;
+	display: block;
+	float: left;
+	width: 50rem;
+    height: 3rem;
+	font-family: fangzheng;
+	font-size: 2.2rem;
+	line-height: 3rem;
+	color: #FFFFFF;
+}
+.back,.user{
+	height:97%;
+	width: 5%;
+	float: right;
+	color: #FFFFFF;
+}
+.userfont,.backfont{
+	width: 100%;
+	text-align: center;
+	margin-top: 2%;
+}
+.back{
+	background-color: #199297;
+	border-right:1px solid #1dacb1 ;
+}
+.backimg{
+	width: 45%;
+	height: 50%;
+	margin-left: 28%;
+	margin-top: 12%;
+	background: url(../img/主页.png) no-repeat;
+	background-size: cover;
+}
+.userimg{
+	width: 45%;
+	height: 50%;
+	margin-left: 28%;
+	margin-top: 12%;
+	background: url(../img/用户.png) no-repeat;
+	background-size: cover;
+}
+.user{
+	background-color: #178A8E;
+}
+/*页面左侧菜单*/
+.list{
+	font-size: 1.2rem;
+	height: 3rem;
+	line-height: 3rem;
+	padding-left: 15%;
+	border-bottom: 1px solid #d4d4d4;
+	border-right: 1px solid #d4d4d4;
+	background-color: #f1f1f1;
+    width: 85%;
+    font-weight: bold;
+    color: #666666;
+}
+.list:hover{
+	background-color: #f8f8f8;
+}
+.list i{
+	display: block;
+	float: left;
+	margin-top: 6%;
+	margin-right: 2%;
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/icon.png) no-repeat;
+	background-size: 1rem 1rem;
+}
+.listclick{
+	color: #189EA3;
+}
+.listclick i{
+	color: #189EA3;
+}
+#timeTaps{
+	width: 95%;
+	height: 2rem;
+	margin: 0px auto;
+	border: 1px solid #15AAF1;
+	color: #15AAF1;
+	margin-top: 1.5rem;
+	border-radius: 0.3rem;
+}
+.timeTap{
+	text-align: center;
+	line-height: 2rem;
+	width: 24.5%;
+	float: left;
+	height: 100%;
+	border-right: 1px solid #15AAF1;
+	cursor: pointer;
+}
+.timeTapclick{
+	color: #FFFFFF;
+	background-color: #15AAF1;
+}
+.timeTap:last-child{
+	border-right:none;
+}
+.timeselect{
+	height: 2rem;
+	margin-top: 1.5rem;
+	margin-left: 2.5%;
+	width: 97.5%;
+	color: #666666;
+	cursor: pointer;
+}
+.timeselect input{
+	margin-left: 0.2rem;
+}
+.timefont{
+	height: 1rem;
+	line-height: 1rem;
+	margin-top: 1.5rem;
+	width: 50%;
+	margin-left: 2.5%;
+	color: #666666;
+}
+.areak{
+	height: 2rem;
+	width: 28%;
+	float: left;
+	text-align: center;
+	line-height: 2rem;
+	margin-left: 2.5%;
+	border-radius: 0.2rem;
+	background-color: #F1F5F7;
+	color: #666666;
+	margin-top: 1.5rem;
+	cursor: pointer;
+}

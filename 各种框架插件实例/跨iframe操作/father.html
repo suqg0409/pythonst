@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			iframe{
+				border: 1px solid #007DDB;
+			}
+		</style>
+	<script type="text/javascript"> 
+　　function parent_click(){ 
+　　　　alert("来自父页面"); 
+　　} 
+</script> 
+</head> 
+<body> 
+　　<input type="button" value="调用本页面函数" onclick="parent_click();" /> 
+　　<input type="button" value="调用子页面函数" onclick='window.frames["childPage"].child_click();' /> 
+　　<iframe id="childPage" name="childPage" src="inner.html" width="100%" frameborder="0"></iframe> 
+</html>

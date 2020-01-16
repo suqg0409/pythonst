@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Language" content="zh-CN">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name=”renderer” content=”webkit|ie-comp|ie-stand”/>
+		<title></title>
+		<!--1、Jquery组件引用-->
+	    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	    <!--2、echart4组件引用-->
+	    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	    <!--3、滚动条的引入-->
+	    <script src="js/my_scrollbar.js" type="text/javascript" charset="utf-8"></script>
+		<!--4、页面自编辑文件的引用-->
+		
+		<script src="js/jQuery.fontFlex.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/visual3.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/visual3.css"/>
+	</head>
+	<body>
+		<div id="header">
+			<i class="logo"></i>
+		</div>
+		<div id="main">
+			<div id="mainLeft">
+				<div class="title">
+					实时监测数据
+				</div>
+				<div id="realTime">
+					<table id="realTimeTable" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="40%">
+								车牌号
+							</td>
+							<td width="30%">
+								监测结果
+							</td>
+							<td width="30%">
+								报警信息
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="plateNub1">豫A99999</div>
+							</td>
+							<td>
+								合格
+							</td>
+							<td>
+								0
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="plateNub1">豫A99998</div>
+							</td>
+							<td>
+								合格
+							</td>
+							<td>
+								0
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="plateNub1">豫A99998</div>
+							</td>
+							<td>
+								合格
+							</td>
+							<td>
+								0
+							</td>
+						</tr>
+						<tr class="redTr">
+							<td>
+								<div class="plateNub2">豫A99997</div>
+							</td>
+							<td>
+								不合格
+							</td>
+							<td>
+								1
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="title">
+					监测数据量
+				</div>
+				<div id="chart4">
+					
+				</div>	
+				<div id="chart4Nub">
+					<div class="chart4Nub1">
+						月检测数据：100000
+					</div>
+					<div class="chart4Nub2">
+						日监测数据：2500
+					</div>
+				</div>
+				<div class="title">
+					监测线信息动态
+				</div>
+			</div>
+			<div id="mainMiddle">
+				<div id="chart3">
+					
+				</div>
+				<div id="gisMessage">
+					<div id="tableHeader">
+						<div>
+							检测线名称
+						</div>
+						<div>
+							检测线合格数
+						</div>
+						<div>
+							检测总数
+						</div>
+						<div>
+							合格率
+						</div>
+					</div>
+					<div id="tableroll">
+					<table id="gisMessageTable" class="scroll" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="25%">
+								环检五号线
+							</td>
+							<td width="25%">
+								13
+							</td>
+							<td width="25%">
+								14
+							</td>
+							<td width="25%">
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+						<tr>
+							<td>
+								环检五号线
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								93%
+							</td>
+						</tr>
+					</table>
+					</div>
+				</div>
+			    <div id="toolsleft">
+					<div id="toolsleft1">
+						
+					</div>
+					<div id="toolsleft2">
+						
+					</div>	
+					<div id="toolsleft3">
+						
+					</div>	
+					<div id="toolsleft4">
+						
+					</div>	
+				</div>
+				<div id="toolsleftbot">
+					<div id="toolsleft5">
+						
+					</div>	
+				</div>
+			    <div id="timeline">
+					<div id="line1">
+						
+					</div>
+					<div id="butleft">
+						
+					</div>
+					<div id="butright">
+						
+					</div>
+					<div id="ztbut">
+						<i id="ztbut1"></i>
+					</div>
+					<div id="time1" class="timeP timePk">
+						<div class="timelinePoint1Out checkPointOut">
+						<div class="timelinePoint1 checkPoint">
+						
+						</div>
+						</div>
+						<div class="timelineNub1 checkPointNub">
+							01-05
+						</div>
+					</div>
+					<div id="time2" class="timeP">
+						<div class="timelinePoint2Out checkPointOut">
+						<div class="timelinePoint2 checkPoint">
+						
+						</div>
+						</div>
+						<div class="timelineNub2 checkPointNub">
+							01-06
+						</div>
+					</div>
+					<div id="time3" class="timeP">
+						<div class="timelinePoint3Out checkPointOut">
+						<div class="timelinePoint3 checkPoint">
+						
+						</div>
+						</div>
+						<div class="timelineNub3 checkPointNub">
+							01-07
+						</div>
+					</div>
+					<div id="time4" class="timeP">
+						<div class="timelinePoint4Out checkPointOut">
+						<div class="timelinePoint4 checkPoint">
+						
+						</div>
+						</div>
+						<div class="timelineNub4 checkPointNub">
+							01-08
+						</div>
+					</div>
+					<div id="time5" class="timeP">
+						<div class="timelinePoint5Out checkPointOut">
+						<div class="timelinePoint5 checkPoint">
+						
+						</div>
+						</div>
+						<div class="timelineNub5 checkPointNub">
+							01-09
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div id="mainRight">
+				<div class="title2">
+					按检测方法合格率情况
+				</div>
+				<div id="chart1">
+					
+				</div>
+				<div id="chart1Nub">
+					<div class="chart1Nub1">
+						<span class="chart1NubW">综合格率：</span><span class="chart1Nub1c">80%</span>
+					</div>
+					<div class="chart1Nub2">
+						<span class="chart1NubW">加载减速法：</span><span class="chart1Nub2c">80%</span>
+					</div>
+					<div class="chart1Nub3">
+						<span class="chart1NubW">双怠速法：</span><span class="chart1Nub3c">89%</span>
+					</div>
+					<div class="chart1Nub4">
+						<span class="chart1NubW">不透光烟度法：</span><span class="chart1Nub4c">91%</span>
+					</div>
+					<div class="chart1Nub5">
+						<span class="chart1NubW">不透光烟度法：</span><span class="chart1Nub5c">91%</span>
+					</div>
+				</div>
+		
+				<div class="title2">
+					按检测线合格率情况
+				</div>
+				<div id="chart2">
+					
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="dynamic">
+				<table id="dynamicTableheader" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="9%">
+							检测站名称
+						</td>
+						<td width="10%">
+							检测线名称
+						</td>
+						<td width="9%">
+							检测线类型
+						</td>
+						<td width="9%">
+							检测线状态
+						</td>
+						<td width="9%">
+							设备商
+						</td>
+						<td width="9%">
+							在检车辆
+						</td>
+						<td width="9%">
+							检测总数
+						</td>
+						<td width="9%">
+							合格数
+						</td>
+						<td width="9%">
+							合格率
+						</td>
+						<td width="9%">
+							检定有效期（天）
+						</td>
+						<td width="9%">
+							检测异常数量
+						</td>
+					</tr>
+				</table>
+				<div id="dynamicTabledroll">
+				<table id="dynamicTable" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="9%">
+							公交
+						</td>
+						<td width="10%">
+							公交检测线（1）
+						</td>
+						<td width="9%">
+							重柴线
+						</td>
+						<td width="9%">
+							正常
+						</td>
+						<td width="9%">
+							成保
+						</td>
+						<td width="9%">
+							无
+						</td>
+						<td width="9%">
+							15
+						</td>
+						<td width="9%">
+							15
+						</td>
+						<td width="9%">
+							100%
+						</td>
+						<td width="9%">
+							107
+						</td>
+						<td width="9%">
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<div id="dynamic2">
+				<table id="dynamicTableheader2" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="9%">
+							检测站名称
+						</td>
+						<td width="10%">
+							检测线名称
+						</td>
+						<td width="9%">
+							检测线类型
+						</td>
+						<td width="9%">
+							检测线状态
+						</td>
+						<td width="9%">
+							设备商
+						</td>
+						<td width="9%">
+							在检车辆
+						</td>
+						<td width="9%">
+							检测总数
+						</td>
+						<td width="9%">
+							合格数
+						</td>
+						<td width="9%">
+							合格率
+						</td>
+						<td width="9%">
+							检定有效期（天）
+						</td>
+						<td width="9%">
+							检测异常数量
+						</td>
+					</tr>
+				</table>
+				<div id="dynamicTabledroll2">
+				<table id="dynamicTable2" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="9%">
+							公交
+						</td>
+						<td width="10%">
+							公交检测线（1）
+						</td>
+						<td width="9%">
+							重柴线
+						</td>
+						<td width="9%">
+							正常
+						</td>
+						<td width="9%">
+							成保
+						</td>
+						<td width="9%">
+							无
+						</td>
+						<td width="9%">
+							15
+						</td>
+						<td width="9%">
+							15
+						</td>
+						<td width="9%">
+							100%
+						</td>
+						<td width="9%">
+							107
+						</td>
+						<td width="9%">
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							公交
+						</td>
+						<td>
+							公交检测线（1）
+						</td>
+						<td>
+							重柴线
+						</td>
+						<td>
+							正常
+						</td>
+						<td>
+							成保
+						</td>
+						<td>
+							无
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							15
+						</td>
+						<td>
+							100%
+						</td>
+						<td>
+							107
+						</td>
+						<td>
+							0
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
