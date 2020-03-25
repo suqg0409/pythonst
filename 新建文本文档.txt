@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap-table.css">
+    <!--固定列需要引用此css文件-->
+    <link rel="stylesheet" type="text/css" href="../bootstrap-table-fixed-columns.css">
+
+    <script type="text/javascript" src="../jquery.js"></script>
+    <script type="text/javascript" src="..//bootstrap.js"></script>
+    <script type="text/javascript" src="../bootstrapTable/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../bootstrap-table-zh-CN.js"></script>
+    <!--固定列需要引用此js文件-->
+    <script type="text/javascript" src="../bootstrap-table-fixed-columns.js"></script>
+    <style>
+        body{
+            width: 100%;
+        }
+        //固定表头样式
+        #goodsList {
+            padding: 0;
+            height: 400px;
+            overflow-y: scroll;//重要！
+        }
+        .fixTable thead {
+            background-color: #fff;
+        }
+
+
+
+        //对于复杂的表头，固定列的时候需要调整样式，具体数值根据实际定
+        /*固定第一列样式控制start*/
+        #detailTableContainer .fixed-table-header-columns{
+            height: 121px !important;
+            top: 42px !important;
+            display: block !important;
+            background: #eeeeee !important;
+        }
+        #detailTableContainer .fixed-table-body-columns{
+            top: 163px !important;
+            height: 770px !important;
+            width: 73px !important;
+
+        }
+        /*固定第一列样式控制end*/
+    </style>
+</head>
+<body>
+<!--固定的表头相对于此div绝对定位，故此div要position: relative相对定位-->
+<div id="goodsList"  style="position: relative;width: 100%">
+    <!--固定的表头跟内容对不齐的解决方法-重要代码1-->
+    <!--style="table-layout: fixed;word-break:break-all;"
+    table-layout:fixed 的作用是指定每列标题头的宽度
+    word-break:break-all，如果单元格内的数据在被列宽限制的情况下会换行显示
+    确定了每列的宽度后方便调整固定表头跟内容对齐-->
+<table id="textTable"  class="table table-bordered scrollTable" style="table-layout: fixed;word-break:break-all;">
+</table>
+</div>
+<script>
+    $(function(){
+        var  Columns = [
+            //注意：不要有下面注释掉的这一个大表头，这样的话每列的宽度就控制不了了，
+            //不知道原因，实践得来的
+            // [
+            //     {
+            //         title: 公园绿地明细表',
+            //         align: 'center',
+            //         colspan: 7,
+            //     }
+            // ],
+            [
+                {
+                    field: 'F3',
+                    title: '合计',
+                    halign:'center',
+                    align:'center',
+                    rowspan: 2,
+                    //固定的表头跟内容对不齐的解决方法-重要代码2：width:100，
+//注意后面的每列都要有width,取值建议是50的整倍数（实践经验），
+//因为最终每列的宽度并不是自己写的值，而是按照倍数均分的宽度。
+                    width:100
+                },{
+                title: '公园面积',
+                halign:'center',
+                align:'center',
+                colspan:4,
+                width:400
+            },{
+                field: 'F9',
+                title: '山体公园',
+                halign:'center',
+                align:'center',
+                rowspan: 2,
+                width:100
+            },{
+                field: 'F10',
+                title: '广场用地',
+                halign:'center',
+                align:'center',
+                rowspan: 2,
+                width:100
+            }
+            ],[
+                {
+                    field: 'F11',
+                    title: '合计',
+                    halign:'center',
+                    align:'center',
+                    width:100
+                },{
+                    field: 'F12',
+                    title: '绿地面积',
+                    halign:'center',
+                    align:'center',
+                    width:100
+                },{
+                    field: 'F13',
+                    title: '建筑占地面积',
+                    halign:'center',
+                    align:'center',
+                    width:100
+                },{
+                    field: 'F14',
+                    title: '其他占地面积',
+                    halign:'center',
+                    align:'center',
+                    width:100
+                }
+            ]
+
+
+        ];
+        var TableData = [
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+            {'F3':123,'F9':152,'F10':5556,'F11':6523,'F12':7812,'F13':1753,'F14':9526},
+        ];
+        $('#textTable').bootstrapTable('destroy').bootstrapTable({
+            columns:Columns,
+            data: TableData,
+            striped:true,
+            search:true, //搜索框
+            pagination:false,  //设置为 true 会在表格底部显示分页条。
+            //固定第一列代码
+            // fixedColumns: true,
+            // fixedNumber: 1 //固定列数
+        });
+
+        var $fixTable = $('#goodsList .fixTable');
+        $('#goodsList').scroll(function() {
+            var id = '#' + this.id;
+            var scrollTop = $(id).scrollTop() || $(id).get(0).scrollTop,
+                style = {
+                    // 固定的表头跟内容对不齐的解决方法-重要代码3：通过width,left等参数调整固定表头的位置，使其与内容对齐
+                    'position': 'absolute',
+                    'left': '0',
+                    'right': '0',
+                    'top': scrollTop + 'px',
+                    'width':'100%'
+                };
+            if ($fixTable.length) {
+                (scrollTop === 0) ? $fixTable.addClass('hidden') : $fixTable.removeClass('hidden');
+                $fixTable.css(style);
+            } else {
+                var html = $(id + ' .scrollTable thead').get(0).innerHTML;
+                var table = $('<table class="table table-bordered fixTable"><thead>' + html + '</thead></table>');
+                table.css(style);
+                $(id).append(table);
+                $fixTable = $(this).find('.fixTable');
+            }
+        });
+    })
+</script>
+
+</body>
+</html>
+参考：https://segmentfault.com/a/1190000004713875?_ea=701754
+
+bootstrap-table-fixed-columns.js、bootstrap-table-fixed-columns.css下载地址：https://github.com/wenzhixin/bootstrap-table-fixed-columns
